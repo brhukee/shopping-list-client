@@ -1,7 +1,7 @@
 'use strict'
 
-const authEvents = require('./auth/event')
-const listEvents = require('./lists/events')
+const authEvents = require('./auth/events')
+const entryEvents = require('./entries/events')
 
 $(() => {
   // Unauthenticated View
@@ -10,19 +10,19 @@ $(() => {
   $('.main-view').hide()
   $('#authenticated-main').hide()
   $('#authenticated-user').hide()
-  $('#authenticated-list').hide()
+  $('#authenticated-entry').hide()
   $('#authenticated-edit').hide()
   $('#authenticated-site').hide()
   // Authentication
   $(() => {
     authEvents.authHandlers()
   })
-  // Screen Toggle
+  // Screen Toggling
   $(() => {
     authEvents.toggleHandlers()
   })
-  // List Actions
+  // Entry Actions
   $(() => {
-    listEvents.listHandlers()
+    entryEvents.entryHandlers()
   })
 })

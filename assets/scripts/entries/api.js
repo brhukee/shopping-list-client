@@ -3,73 +3,73 @@
 const store = require('../store')
 const config = require('../config')
 
-const getAllLists = () => {
+const getAllEntries = () => {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/lists',
+    url: config.apiUrl + '/entries',
     method: 'GET'
   })
 }
 
-const getMyLists = () => {
+const getMyEntries = () => {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/users/' + store.user._id + '/lists',
+    url: config.apiUrl + '/users/' + store.user._id + '/entries',
     method: 'GET'
   })
 }
 
-const showList = (listId) => {
+const showEntry = (entryId) => {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/lists/' + listId,
+    url: config.apiUrl + '/entries/' + entryId,
     method: 'GET'
   })
 }
 
-const addList = (formData) => {
+const addEntry = (formData) => {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/lists',
+    url: config.apiUrl + '/entries',
     method: 'POST',
     data: formData
   })
 }
 
-const updateList = (formData, listId) => {
+const updateEntry = (formData, entryId) => {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/lists/' + listId,
+    url: config.apiUrl + '/entries/' + entryId,
     method: 'PATCH',
     data: formData
   })
 }
 
-const deleteList = (listId) => {
+const deleteEntry = (entryId) => {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/lists/' + listId,
+    url: config.apiUrl + '/entries/' + entryId,
     method: 'DELETE'
   })
 }
 
 module.exports = {
-  getAllLists,
-  getMyLists,
-  showList,
-  addList,
-  updateList,
-  deleteList
+  getAllEntries,
+  getMyEntries,
+  showEntry,
+  addEntry,
+  updateEntry,
+  deleteEntry
 }

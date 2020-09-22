@@ -1,1 +1,158 @@
 @import '~bootstrap/scss/bootstrap';
+
+$text-color: #0011a4;
+$sub-text-color: #00707e;
+$box-color: rgba(0, 146, 164, .35);
+$box-text-color: #fff;
+$com-text-color: #005155;
+$name-text-color: rgba(0, 190, 177, .7);
+$text-shadow-color: #e6a9d2;
+
+body {
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+h1 {
+  color: $text-color;
+  font-family: fantasy, monospace, sans-serif;
+  font-size: 80px;
+  font-weight: 600px;
+  padding: 50px;
+  text-shadow: 2px 2px 5px $box-text-color;
+}
+
+.sub-title {
+  color: $text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+}
+
+.sub-text {
+  color: $sub-text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.left-button {
+  background-color: $box-color;
+  color: $box-text-color;
+  float: left;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+  margin: 100px 0 0 450px;
+  padding: 5px;
+}
+
+.right-button {
+  background-color: $box-color;
+  color: $box-text-color;
+  float: right;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 16px;
+  margin: 100px 450px 0 0;
+  padding: 5px;
+}
+
+.auth-view {
+  color: $com-text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 16px;
+}
+
+.sign-up {
+  background-color: $box-color;
+  color: $text-color;
+  float: left;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+  height: 280px;
+  line-height: 1.8;
+  margin: 0 0 0 300px;
+  padding: 30px;
+  width: 320px;
+}
+
+.sign-in {
+  background-color: $box-color;
+  color: $text-color;
+  float: right;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+  height: 280px;
+  line-height: 1.8;
+  margin: 0 300px 0 0;
+  padding: 50px;
+  width: 320px;
+}
+
+.welcome {
+  color: $name-text-color;
+  font-family: cursive, monospace, sans-serif;
+  font-size: 55px;
+  text-shadow: 2px 2px 4px $text-shadow-color;
+}
+
+.main-view {
+  color: $com-text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 16px;
+}
+
+button {
+  background-color: $box-color;
+  border-radius: 8%;
+  color: $box-text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px;
+}
+
+.change-password {
+  font-family: 'Courier New', monospace, sans-serif;
+}
+
+.user-entry {
+  background-color: $box-color;
+  color: $text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+  height: 660px;
+  line-height: 1.8;
+  margin: auto;
+  padding: 50px;
+  width: 630px;
+}
+
+.new-edit {
+  background-color: $box-color;
+  color: $text-color;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-size: 18px;
+  height: 660px;
+  line-height: 1.8;
+  margin: auto;
+  padding: 50px;
+  width: 630px;
+}
+
+.title-input {
+  height: 40px;
+  width: 410px;
+}
+
+.text-input {
+  height: 400px;
+  width: 500px;
+}
+
+.title-label {
+  font-size: 20px;
+}
+
+.text-label {
+  font-size: 20px;
+}

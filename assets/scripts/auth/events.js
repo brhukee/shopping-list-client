@@ -50,12 +50,12 @@ const onSignOut = (event) => {
 
 // Toggle Handlers
 const toggleHandlers = (event) => {
-  $('.new-list').on('click', onNewList)
+  $('.new-entry').on('click', onNewEntry)
   $('#new-password').on('click', onNewPassword)
   $('.main-page').on('click', onMainPage)
   $('.left-button').on('click', onSignUpClick)
   $('.right-button').on('click', onSignInClick)
-  $('.edit-list').on('click', onEditListClick)
+  $('.edit-entry').on('click', onEditEntryClick)
   $('#close').on('click', onClose)
 }
 
@@ -68,29 +68,29 @@ const onNewPassword = (event) => {
 const onMainPage = (event) => {
   event.preventDefault()
   $('#authenticated-user').hide()
-  $('#authenticated-list').hide()
+  $('#authenticated-entry').hide()
   $('#authenticated-site').hide()
   $('#authenticated-main').show()
   $('#authenticated-edit').hide()
-  $('.welcome').text(store.user.name)
-  $('.main-view').text('Start by creating a new list, or access an old list')
-  $('.blog-list').empty()
-  $('.site-list').empty()
+  $('.welcome').text(store.user.name + '\'s Space')
+  $('.main-view').text('What would you like to do?')
+  $('.blog-entry').empty()
+  $('.site-entry').empty()
 }
 
-const onNewList = (event) => {
+const onNewEntry = (event) => {
   event.preventDefault()
   $('#authenticated-main').hide()
   $('#authenticated-user').hide()
   $('#authenticated-site').hide()
   $('.change-password').hide()
-  $('#authenticated-list').show()
-  $('.main-view').text('Your current list')
-  $('.blog-list').empty()
-  $('.site-list').empty()
+  $('#authenticated-entry').show()
+  $('.main-view').text('the happy space')
+  $('.blog-entry').empty()
+  $('.site-entry').empty()
 }
 
-const onEditListClick = (event) => {
+const onEditEntryClick = (event) => {
   event.preventDefault()
   $('#authenticated-user').hide()
   $('#authenticated-edit').show()
@@ -124,9 +124,9 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onNewList,
+  onNewEntry,
   onNewPassword,
-  onEditListClick,
+  onEditEntryClick,
   onMainPage,
   onSignUpClick,
   onSignInClick,
