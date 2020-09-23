@@ -4,40 +4,40 @@ const ui = require('./ui')
 const api = require('./api')
 const getFormFields = require('./../../../lib/get-form-fields')
 
-const getBooks = function () {
-  api.getBooks()
-    .then(ui.showBooksSuccess)
+const getLists = function () {
+  api.getLists()
+    .then(ui.showListsSuccess)
 }
 
-const createNewBook = function (event) {
+const createNewList = function (event) {
   event.preventDefault()
   const form = event.target
   const list = getFormFields(form)
-  api.createNewBook(list)
-    .then(ui.createNewBookSuccess)
-    .then(getBooks)
+  api.createNewList(list)
+    .then(ui.createNewListSuccess)
+    .then(getLists)
 }
 
-const updateBook = function (event) {
+const updateList = function (event) {
   event.preventDefault()
   const id = $(event.target).attr('id')
   const data = getFormFields(event.target)
-  api.updateBook(data, id)
-    .then(ui.updateBookSuccess)
-    .then(getBooks)
+  api.updateList(data, id)
+    .then(ui.updateListSuccess)
+    .then(getLists)
 }
 
-const deleteBook = function (event) {
-  const targetBook = event.target
-  const bookId = $(targetBook).attr('data-value-index')
-  api.deleteBookCall(bookId)
-    .then(ui.deleteBookSuccess)
-    .then(getBooks)
+const deleteList = function (event) {
+  const targetList = event.target
+  const listId = $(targetList).attr('data-value-index')
+  api.deleteListCall(listId)
+    .then(ui.deleteListSuccess)
+    .then(getLists)
 }
 
 module.exports = {
-  getBooks: getBooks,
-  createNewBook: createNewBook,
-  deleteBook: deleteBook,
-  updateBook: updateBook
+  getLists: getLists,
+  createNewList: createNewList,
+  deleteList: deleteList,
+  updateList: updateList
 }

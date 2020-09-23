@@ -1,12 +1,12 @@
 'use strict'
 
-const showBooksSuccess = function (response) {
-  $('#allMyBooks').html('')
+const showListsSuccess = function (response) {
+  $('#allMyLists').html('')
   if (response.lists.length === 0) {
-    $('#allMyBooks').append(`<p>You don't seem to have any lists, why dont you add some</p>`)
+    $('#allMyLists').append('<p>You don\'t have any lists.</p>')
   }
   for (let i = 0; i < response.lists.length; i++) {
-    $('#allMyBooks').append(
+    $('#allMyLists').append(
       `<h4>List ${i + 1}</h4>
       <p>Title: ${response.lists[i].title} </p>
       <p> Author: ${response.lists[i].author}</p>
@@ -27,11 +27,11 @@ const showBooksSuccess = function (response) {
   $('.list-update').hide()
 }
 
-const createNewBookSuccess = function () {
+const createNewListSuccess = function () {
   $('#list-create').trigger('reset')
 }
 
-const deleteBookSuccess = function () {
+const deleteListSuccess = function () {
 }
 
 const updateShow = function () {
@@ -55,9 +55,9 @@ const showPassChangeForm = function () {
 }
 
 module.exports = {
-  showBooksSuccess: showBooksSuccess,
-  createNewBookSuccess: createNewBookSuccess,
-  deleteBookSuccess: deleteBookSuccess,
+  showListsSuccess: showListsSuccess,
+  createNewListSuccess: createNewListSuccess,
+  deleteListSuccess: deleteListSuccess,
   updateShow: updateShow,
   showSignInForm: showSignInForm,
   showSignUpForm: showSignUpForm,

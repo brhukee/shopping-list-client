@@ -3,7 +3,7 @@
 const config = require('./../config')
 const store = require('./../store')
 
-const getBooks = function (req, res) {
+const getLists = function (req, res) {
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'GET',
@@ -11,7 +11,7 @@ const getBooks = function (req, res) {
   })
 }
 
-const createNewBook = function (list) {
+const createNewList = function (list) {
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'POST',
@@ -20,7 +20,7 @@ const createNewBook = function (list) {
   })
 }
 
-const updateBook = function (data, id) {
+const updateList = function (data, id) {
   return $.ajax({
     url: config.apiUrl + '/lists/' + `${id}`,
     method: 'PATCH',
@@ -29,17 +29,17 @@ const updateBook = function (data, id) {
   })
 }
 
-const deleteBookCall = function (bookId) {
+const deleteListCall = function (listId) {
   return $.ajax({
-    url: config.apiUrl + '/lists/' + `${bookId}`,
+    url: config.apiUrl + '/lists/' + `${listId}`,
     method: 'DELETE',
     headers: { Authorization: 'Bearer ' + store.user.token }
   })
 }
 
 module.exports = {
-  getBooks: getBooks,
-  createNewBook: createNewBook,
-  deleteBookCall: deleteBookCall,
-  updateBook: updateBook
+  getLists: getLists,
+  createNewList: createNewList,
+  deleteListCall: deleteListCall,
+  updateList: updateList
 }
