@@ -1,48 +1,43 @@
 'use strict'
 
-const store = require('../store')
-const config = require('../config')
+const config = require('./../config')
+const store = require('./../store')
 
-const signUp = (formData) => {
+const signUp = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
-    data: formData
+    data: data
   })
 }
 
-const signIn = (formData) => {
+const signIn = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
-    data: formData
+    data: data
   })
 }
 
-const changePassword = (formData) => {
+const passChange = function (data) {
   return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
-    data: formData
+    headers: { Authorization: 'Bearer ' + store.user.token },
+    data: data
   })
 }
 
-const signOut = () => {
+const signOut = function () {
   return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
     url: config.apiUrl + '/sign-out',
-    method: 'DELETE'
+    method: 'DELETE',
+    headers: { Authorization: 'Bearer ' + store.user.token }
   })
 }
-
 module.exports = {
-  signUp,
-  signIn,
-  changePassword,
-  signOut
+  signUp: signUp,
+  signIn: signIn,
+  passChange: passChange,
+  signOut: signOut
 }

@@ -1,28 +1,36 @@
 'use strict'
 
+// use require with a reference to bundle the file and use it in this file
+// const example = require('./example')
 const authEvents = require('./auth/events')
-const entryEvents = require('./entries/events')
+const authUi = require('./auth/ui')
+const listEvents = require('./list/events')
+const listUi = require('./list/ui')
+// use require without a reference to ensure a file is bundled
+// require('./example')
 
 $(() => {
-  // Unauthenticated View
-  $('.sign-up').hide()
-  $('.sign-in').hide()
-  $('.main-view').hide()
-  $('#authenticated-main').hide()
-  $('#authenticated-user').hide()
-  $('#authenticated-entry').hide()
-  $('#authenticated-edit').hide()
-  $('#authenticated-site').hide()
-  // Authentication
-  $(() => {
-    authEvents.authHandlers()
-  })
-  // Screen Toggling
-  $(() => {
-    authEvents.toggleHandlers()
-  })
-  // Entry Actions
-  $(() => {
-    entryEvents.entryHandlers()
-  })
+  $('#sign-up-form').on('submit', authEvents.onSignUp)
+  $('#sign-in-form').on('submit', authEvents.onSignIn)
+  $('#pass-change-form').on('submit', authEvents.onPassChange)
+  $('#signOut').on('click', authEvents.onSignOut)
+  $('#sign-in-button').on('click', authUi.onSignInButton)
+  $('#sign-up-button').on('click', authUi.onSignUpButton)
+  $('#change').on('click', authUi.changePassForm)
+  $('#getBooks').on('click', listEvents.getBooks)
+  $('#list-create').on('submit', listEvents.createNewBook)
+  $('#allMyBooks').on('click', '.delete-button', listEvents.deleteBook)
+  $('#allMyBooks').on('click', '.update-button', listUi.updateShow)
+  $('#allMyBooks').on('submit', '.list-update', listEvents.updateBook)
+  $('#pass-change-form').hide()
+  $('#pass-change-button').hide()
+  $('#owner').hide()
+  $('#getBooks').hide()
+  $('#list-create').hide()
+  $('#signOut').hide()
+  $('#sign-up-form').hide()
+  $('#sign-in-form').hide()
+  $('#signInButton').on('click', listUi.showSignInForm)
+  $('#signUpButton').on('click', listUi.showSignUpForm)
+  $('#pass-change-button').on('click', listUi.showPassChangeForm)
 })
