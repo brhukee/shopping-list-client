@@ -29,7 +29,7 @@ const onSignInSuccess = function (response) {
   $('#signUpButton').hide()
   $('#signOut').show()
   $('#pass-change-button').show()
-  $('#getBooks').show()
+  $('#getLists').show()
   $('#list-create').show()
   $('#signOut').show()
 }
@@ -57,9 +57,9 @@ const onSignOutSuccess = function (response) {
   $('#signOut').hide()
   $('#pass-change-form').hide()
   $('#pass-change-button').hide()
-  $('#getBooks').hide()
+  $('#getLists').hide()
   $('#list-create').hide()
-  $('#allMyBooks').html('')
+  $('#allMyLists').html('')
   $('#signInButton').show()
   $('#signUpButton').show()
 }

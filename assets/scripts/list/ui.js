@@ -9,14 +9,11 @@ const showListsSuccess = function (response) {
     $('#allMyLists').append(
       `<h4>List ${i + 1}</h4>
       <p>Title: ${response.lists[i].title} </p>
-      <p> Author: ${response.lists[i].author}</p>
       <form id='${response.lists[i]._id}' class="list-update">
         <fieldset>
-          <legend>Update List!</legend>
+          <legend>Update List</legend>
           <label for="Title">Title</label>
           <input name="title" type="text" value="${response.lists[i].title}">
-          <label for="Author">Author</label>
-          <input name="author" type="text" value="${response.lists[i].author}">
           <input type="submit" value="Update List">
         </fieldset>
       </form>
